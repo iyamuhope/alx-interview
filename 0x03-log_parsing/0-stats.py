@@ -16,7 +16,8 @@ status_codes = {
     405: 0,
     500: 0
 }
-total_size  = 0
+total_size = 0
+
 
 def print_stats():
     print("File size: {}".format(total_size))
