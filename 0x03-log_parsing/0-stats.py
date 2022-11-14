@@ -18,35 +18,33 @@ status_codes = {
 }
 total_size  = 0
 
+def print_stats():
+    print("File size: {}".format(total_size))
+    for code in sorted(status_codes):
+        if status_codes[code]:
+            print("{}: {}".format(code, status_codes[code]))
+
+
 while True:
     try:
         file_sizes = 0
         for i in range(10):
             line = sys.stdin.readline()
-            line = line.split(" ")
+            line = line.rstrip().split()
             if len(line) != 9:
                 break
             try:
-                code = int(line[7])
-                file_size = int(line[8].rstrip("\n"))
+                code = int(line[-2])
+                file_size = int(line[-1])
             except ValueError:
                 continue
             if code in status_codes:
                 status_codes[code] += 1
                 file_sizes += file_size
-
         if not file_sizes:
             break
-
         total_size += file_sizes
-        print("File size: {}".format(total_size))
-        for code in sorted(status_codes):
-            if status_codes[code]:
-                print("{}: {}".format(code, status_codes[code]))
-
+        print_stats()
     except KeyboardInterrupt:
-        print("File size: {}".format(total_size))
-        for code in sorted(status_codes):
-            if status_codes[code]:
-                print("{}: {}".format(code, status_codes[code]))
-        raise KeyboardInterrupt
+        print_stats()
+        raise
