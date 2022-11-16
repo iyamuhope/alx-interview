@@ -1,4 +1,4 @@
-# #!/usr/bin/python3
+#!/usr/bin/python3
 # """
 # This module contains a script that parses the stdin
 # and computes certain metrics.
@@ -49,7 +49,6 @@
 #     except KeyboardInterrupt:
 #         print_stats()
 #         raise
-#!/usr/bin/python3
 """Input stats"""
 import sys
 
