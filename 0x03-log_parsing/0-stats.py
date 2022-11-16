@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+""" Log parsing """
+
+
+import sys
 # """
 # This module contains a script that parses the stdin
 # and computes certain metrics.
@@ -49,9 +53,6 @@
 #     except KeyboardInterrupt:
 #         print_stats()
 #         raise
-"""Input stats"""
-import sys
-
 stats = {
     '200': 0,
     '301': 0,
