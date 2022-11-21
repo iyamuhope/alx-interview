@@ -10,6 +10,7 @@ def validUTF8(data):
         if 191 >= x >= 128:
             if not count:
                 return False
+            count -= 1
         else:
             if count:
                 return False
